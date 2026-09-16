@@ -29,7 +29,7 @@ if today in birthday_dict:
         print(person["name"])
         print(contents)
 
-    with smtplib.SMTP(serwer) as connection:
+    with smtplib.SMTP(serwer, 587) as connection:
         connection.starttls()
         connection.login(user=my_email, password=my_password)
         connection.sendmail(
