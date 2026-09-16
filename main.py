@@ -3,8 +3,8 @@ import smtplib
 import pandas as pd
 import random
 import os
-my_email = os.environ.get("my_email")
-my_password = os.environ.get("my_password")
+my_email = os.environ.get("MY_EMAIL")
+my_password = os.environ.get("MY_PASSWORD")
 serwer = "smtp.gmail.com"
 today = (dt.datetime.now().month, dt.datetime.now().day)
 # print(today)
