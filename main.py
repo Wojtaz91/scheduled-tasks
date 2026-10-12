@@ -22,7 +22,7 @@ for i in data["list"]:
      if i["weather"][0]["id"] < 600:
          datas = True
 
-with smtplib.SMTP(serwer) as connection:
+
 
 if datas:
     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
