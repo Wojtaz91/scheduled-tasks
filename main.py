@@ -16,20 +16,19 @@ params = {
 }
 response = requests.get(api_key, params=params)
 a = response.status_code
-print(a)
 data = (response.json())
 datas = False
 for i in data["list"]:
      if i["weather"][0]["id"] < 600:
          datas = True
 
+with smtplib.SMTP(serwer) as connection:
 
-print(datas)
 if datas:
-    smtp = smtplib.SMTP("smtp.gmail.com", 587)
-    smtp.starttls()
-    smtp.login(user=email, password=password)
-    smtp.sendmail(from_addr=email, to_addrs="wojciechturalski@gmail.com", msg="Subject: Rain\n\nBedzie dzis padac")
+    with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+    connection.starttls()
+    connection.login(user=email, password=password)
+    connection.sendmail(from_addr=email, to_addrs="wojciechturalski@gmail.com", msg="Subject: Rain\n\nBedzie dzis padac")
 
 
 
